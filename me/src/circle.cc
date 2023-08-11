@@ -6,14 +6,6 @@
 template <std::size_t N>
 using Bitmap = std::array<std::array<bool, N>, N>;
 
-// template <std::size_t N>
-// struct Bitmap {
-//   bool& operator()(int x, int y) {
-//     return data.at((N - 1) - y).at(x);
-//   }
-//   std::array<std::array<bool, N>, N> data = {};
-// };
-
 struct Point {
   Point(int x_in, int y_in) : x(x_in), y(y_in) {}
 
