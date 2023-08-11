@@ -56,8 +56,8 @@ ${BIN}: ${OBJ}
 
 # Compile the source files into object files
 ${OBJ}: ${OBJ_DIR}/%.o: ${SRC_DIR}/%.c | ${BUILD_DIRS}
-	# cppcheck --enable=warning --cppcheck-build-dir=${CPPCHECK_DIR} --std=${STD} --quiet --error-exitcode=1 $<
-	cppcheck --enable=warning --cppcheck-build-dir=${CPPCHECK_DIR} --std=${STD} --quiet $<
+	# cppcheck --enable=warning --cppcheck-build-dir=${CPPCHECK_DIR} --quiet --error-exitcode=1 $<
+	cppcheck --enable=warning --cppcheck-build-dir=${CPPCHECK_DIR} --quiet $<
 	${CC} ${CCFLAGS} ${CPPFLAGS} ${INCLUDE} -c $< -o $@
 
 # Create the required directories if they don't already exist
