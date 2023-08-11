@@ -47,6 +47,8 @@ Bitmap<2 * N> draw_circle() {
 
     pen_tip.y++;
     pen_tip.x = (std::sqrt(squared(N - 1) - squared(pen_tip.y)) * 2 + 1) / 2;
+    // pen_tip.x = std::sqrt(squared(N - 1) - squared(pen_tip.y)) + 1;
+    // pen_tip.x = std::sqrt(squared(N - 1) - squared(pen_tip.y));
   }
 
   return result;
@@ -65,7 +67,7 @@ void print_bitmap(Bitmap<N> bitmap) {
 }
 
 int main() {
-  const int RADIUS = 5;
+  const int RADIUS = 20;
   // Point center(0, 0);
   print_bitmap(draw_circle<RADIUS>());
 
