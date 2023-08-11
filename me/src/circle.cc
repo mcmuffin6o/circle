@@ -83,11 +83,14 @@ void print_square_bitmap(Bitmap square_bitmap) {
   }
 }
 
-int main() {
-  const int RADIUS = 20;
-  // Point center(0, 0);
+int main(int argc, char* argv[]) {
+  if (argc != 2) {
+    std::cout << "Usage: circle <radius>" << std::endl;
+    exit(0);
+  }
+
+  const int RADIUS = atoi(argv[1]);
   print_square_bitmap(draw_circle(RADIUS));
-  print_square_bitmap(Bitmap(4, std::vector<bool>(3)));
 
   return 0;
 }
